@@ -1,0 +1,345 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Blueprints>
+
+    <!-- Water transformation Blueprints -->
+   
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>IceOreToWater</SubtypeId>
+      </Id>
+      <DisplayName>GreyWater</DisplayName>
+      <Icon>Textures\GUI\Icons\ingot\gravel_ingot.dds</Icon>
+
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ore" SubtypeId="Ice" />
+      </Prerequisites>
+
+     <Results>
+		<Item Amount="0.9" TypeId="Ingot" SubtypeId="WaterFood" />
+		<Item Amount="0.015" TypeId="Ore" SubtypeId="Organic" />
+		<Item Amount="0.085" TypeId="Ore" SubtypeId="Stone" />
+	  </Results>
+	  
+      <BaseProductionTimeInSeconds>0.75</BaseProductionTimeInSeconds>
+    </Blueprint>
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CleanToCleanWater</SubtypeId>
+      </Id>
+      <DisplayName>Clean Water</DisplayName>
+      <Icon>Textures\GUI\Icons\ingot\gravel_ingot.dds</Icon>
+
+      <Prerequisites>
+        <Item Amount="0.1" TypeId="Ingot" SubtypeId="CleanWater" />
+      </Prerequisites>
+
+      <Result Amount="0.1" TypeId="Ingot" SubtypeId="WaterFood" />
+      <BaseProductionTimeInSeconds>1</BaseProductionTimeInSeconds>
+    </Blueprint>
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>GreyToCleanWater</SubtypeId>
+      </Id>
+      <DisplayName>Clean Water</DisplayName>
+      <Icon>Textures\GUI\Icons\ingot\gravel_ingot.dds</Icon>
+
+      <Prerequisites>
+        <Item Amount="0.1" TypeId="Ingot" SubtypeId="GreyWater" />
+      </Prerequisites>
+
+      <Results>
+		<Item Amount="0.099" TypeId="Ingot" SubtypeId="WaterFood" />
+		<Item Amount="0.001" TypeId="Ore" SubtypeId="Organic" />
+	  </Results>
+	  
+      <BaseProductionTimeInSeconds>1</BaseProductionTimeInSeconds>
+    </Blueprint>
+
+    <!-- Nutrient Paste Blueprint -->
+    
+	<Blueprint>
+	<Id>
+	<TypeId>BlueprintDefinition</TypeId>
+	<SubtypeId>OrganicToNutrients</SubtypeId>
+	</Id>
+	<DisplayName>Nutrients Growth</DisplayName>
+	<Icon>Textures\GUI\Icons\ingot\gravel_ingot.dds</Icon>
+	<Prerequisites>
+	<Item Amount="0.05" TypeId="Ore" SubtypeId="Organic" />
+	</Prerequisites>
+	<Results>
+	<Item Amount="0.005" TypeId="Ingot" SubtypeId="Nutrients" />
+	<Item Amount="0.001" TypeId="Ingot" SubtypeId="GreyWater" />
+	</Results>
+	<BaseProductionTimeInSeconds>0.5</BaseProductionTimeInSeconds>
+	</Blueprint>
+    
+    <!-- Fresh Vegetables and Fruits Blueprint -->
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>BasicToPlant1</SubtypeId>
+      </Id>
+      <DisplayName>Veggies Growth</DisplayName>
+      <Icon>Textures\GUI\Icons\ingot\gravel_ingot.dds</Icon>
+      <Prerequisites>
+        <Item Amount="0.005" TypeId="Ore" SubtypeId="Organic" />
+        <!-- you need only a tiny bit to keep things going, however, it does force you to start with organic -->
+        <Item Amount="0.005" TypeId="Ingot" SubtypeId="WaterFood" />
+        <Item Amount="0.1" TypeId="Ingot" SubtypeId="Stone" />
+        <!--this is gravel-->
+      </Prerequisites>
+      <Results>
+        <Item Amount="0.01" TypeId="Ingot" SubtypeId="SubFresh" />
+        <Item Amount="0.045" TypeId="Ingot" SubtypeId="GreyWater" />
+      </Results>
+      <BaseProductionTimeInSeconds>60</BaseProductionTimeInSeconds>
+    </Blueprint>
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>BasicToPlant2</SubtypeId>
+      </Id>
+      <DisplayName>Veggies Growth</DisplayName>
+      <Icon>Textures\GUI\Icons\ingot\gravel_ingot.dds</Icon>
+      <Prerequisites>
+        <Item Amount="0.005" TypeId="Ore" SubtypeId="Organic" />
+        <!-- you need only a tiny bit to keep things going, however, it does force you to start with organic -->
+        <Item Amount="0.005" TypeId="Ingot" SubtypeId="WaterFood" />
+        <Item Amount="0.1" TypeId="Ore" SubtypeId="Stone" />
+        <!--this is stone-->
+      </Prerequisites>
+      <Results>
+        <Item Amount="0.01" TypeId="Ingot" SubtypeId="SubFresh" />
+        <Item Amount="0.045" TypeId="Ingot" SubtypeId="GreyWater" />
+      </Results>
+      <BaseProductionTimeInSeconds>60</BaseProductionTimeInSeconds>
+    </Blueprint>
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>SeedsToPlant1</SubtypeId>
+      </Id>
+      <DisplayName>Veggies Growth</DisplayName>
+      <Icon>Textures\GUI\Icons\ingot\gravel_ingot.dds</Icon>
+      <Prerequisites>
+        <Item Amount="0.0001" TypeId="Ingot" SubtypeId="TomatoSeeds" />
+        <Item Amount="0.005" TypeId="Ingot" SubtypeId="WaterFood" />
+        <Item Amount="0.1" TypeId="Ingot" SubtypeId="Stone" />
+        <!--this is gravel-->
+      </Prerequisites>
+      <Results>
+        <Item Amount="0.01" TypeId="Ingot" SubtypeId="SubFresh" />
+        <Item Amount="0.045" TypeId="Ingot" SubtypeId="GreyWater" />
+      </Results>
+      <BaseProductionTimeInSeconds>60</BaseProductionTimeInSeconds>
+    </Blueprint>
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>SeedsToPlant2</SubtypeId>
+      </Id>
+      <DisplayName>Veggies Growth</DisplayName>
+      <Icon>Textures\GUI\Icons\ingot\gravel_ingot.dds</Icon>
+      <Prerequisites>
+        <Item Amount="0.0001" TypeId="Ingot" SubtypeId="PotatoSeeds" />
+        <Item Amount="0.005" TypeId="Ingot" SubtypeId="WaterFood" />
+        <Item Amount="0.1" TypeId="Ingot" SubtypeId="Stone" />
+        <!--this is gravel-->
+      </Prerequisites>
+      <Results>
+        <Item Amount="0.01" TypeId="Ingot" SubtypeId="SubFresh" />
+        <Item Amount="0.045" TypeId="Ingot" SubtypeId="GreyWater" />
+      </Results>
+      <BaseProductionTimeInSeconds>60</BaseProductionTimeInSeconds>
+    </Blueprint>
+
+    <!-- Food Blueprints -->
+    
+<Blueprint>
+<Id>
+<TypeId>BlueprintDefinition</TypeId>
+<SubtypeId>ArtificialFood</SubtypeId>
+</Id>
+<DisplayName>Artificial Food</DisplayName>
+<Icon>Textures\not\GUI\Food\SubFresh.dds</Icon>
+<Prerequisites>
+<Item Amount="1" TypeId="Ore" SubtypeId="Organic" />
+<Item Amount="1" TypeId="Ingot" SubtypeId="Stone" />
+<Item Amount="1" TypeId="Ingot" SubtypeId="WaterFood" />
+</Prerequisites>
+<Result Amount="1" TypeId="Ingot" SubtypeId="ArtificialFood" />
+<BaseProductionTimeInSeconds>20</BaseProductionTimeInSeconds>
+</Blueprint>
+    
+<Blueprint>
+<Id>
+<TypeId>BlueprintDefinition</TypeId>
+<SubtypeId>LuxuryMeal</SubtypeId>
+</Id>
+<DisplayName>Luxury Meal</DisplayName>
+<Icon>Textures\not\GUI\Food\FoodWarm.dds</Icon>
+<Prerequisites>
+<Item Amount="0.5" TypeId="Ore" SubtypeId="SabiroidMeat" />
+<Item Amount="0.5" TypeId="Component" SubtypeId="SabiroidEgg" />
+<Item Amount="0.5" TypeId="Ore" SubtypeId="WolfMeat" />
+<Item Amount="0.5" TypeId="Ingot" SubtypeId="SubFresh" />
+</Prerequisites>
+<Result Amount="1" TypeId="Ingot" SubtypeId="LuxuryMeal" />
+<BaseProductionTimeInSeconds>20</BaseProductionTimeInSeconds>
+</Blueprint>
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>SabiroidSteak</SubtypeId>
+      </Id>
+      <DisplayName>Sabiroid Steak</DisplayName>
+      <Icon>Textures\not\GUI\Food\FoodGummybears.dds</Icon>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ore" SubtypeId="SabiroidMeat" />
+      </Prerequisites>
+      <Result Amount="1" TypeId="Ingot" SubtypeId="SabiroidSteak" />
+      <BaseProductionTimeInSeconds>20</BaseProductionTimeInSeconds>
+    </Blueprint>
+    
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>SabiroidOmelette</SubtypeId>
+      </Id>
+      <DisplayName>Sabiroid Omelette</DisplayName>
+      <Icon>Textures\not\GUI\Food\FoodSynthetic.dds</Icon>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Component" SubtypeId="SabiroidEgg" />
+      </Prerequisites>
+      <Result Amount="1" TypeId="Ingot" SubtypeId="SabiroidOmelette" />
+      <BaseProductionTimeInSeconds>20</BaseProductionTimeInSeconds>
+    </Blueprint>
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>VeganFood</SubtypeId>
+      </Id>
+      <DisplayName>Vegan Food</DisplayName>
+      <Icon>Textures\not\GUI\Food\FoodFresh.dds</Icon>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ingot" SubtypeId="SubFresh" />
+      </Prerequisites>
+      <Result Amount="1" TypeId="Ingot" SubtypeId="VeganFood" />
+      <BaseProductionTimeInSeconds>10</BaseProductionTimeInSeconds>
+    </Blueprint>
+
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>WolfSteak</SubtypeId>
+      </Id>
+      <DisplayName>Wolf Steak</DisplayName>
+      <Icon>Textures\not\GUI\Food\FoodGummybears.dds</Icon>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ore" SubtypeId="WolfMeat" />
+      </Prerequisites>
+      <Result Amount="1" TypeId="Ingot" SubtypeId="WolfSteak" />
+      <BaseProductionTimeInSeconds>20</BaseProductionTimeInSeconds>
+    </Blueprint>
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>WolfBouillon</SubtypeId>
+      </Id>
+      <DisplayName>Wolf Bouillon</DisplayName>
+       <Icon>Textures\not\GUI\Canister\NutrientPaste.dds</Icon>
+      <Prerequisites>
+        <Item Amount="0.25" TypeId="Ingot" SubtypeId="SubFresh" />
+        <Item Amount="0.35" TypeId="Ingot" SubtypeId="WaterFood" />
+        <Item Amount="0.40" TypeId="Ore" SubtypeId="WolfMeat" />
+      </Prerequisites>
+      <Result Amount="1" TypeId="Ingot" SubtypeId="WolfBouillon" />
+      <BaseProductionTimeInSeconds>30</BaseProductionTimeInSeconds>
+    </Blueprint>
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>SabiroidBouillon</SubtypeId>
+      </Id>
+      <DisplayName>Sabiroid Bouillon</DisplayName>
+       <Icon>Textures\not\GUI\Canister\OrganicPaste.dds</Icon>
+      <Prerequisites>
+        <Item Amount="0.25" TypeId="Ingot" SubtypeId="SubFresh" />
+        <Item Amount="0.35" TypeId="Ingot" SubtypeId="WaterFood" />
+        <Item Amount="0.40" TypeId="Ore" SubtypeId="SabiroidMeat" />
+      </Prerequisites>
+      <Result Amount="1" TypeId="Ingot" SubtypeId="SabiroidBouillon" />
+      <BaseProductionTimeInSeconds>30</BaseProductionTimeInSeconds>
+    </Blueprint>
+
+    <!-- Drink Blueprints -->
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>WaterFood</SubtypeId>
+      </Id>
+      <DisplayName>Boil Drinking Water</DisplayName>
+      <Icon>Textures\not\GUI\Canister\WaterClean.dds</Icon>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ore" SubtypeId="Ice" /> <!-- inefficient, but useful if you only have a kitchen and need to drink something! -->
+      </Prerequisites>
+      <Result Amount="1" TypeId="Ingot" SubtypeId="WaterFood" />
+      <BaseProductionTimeInSeconds>3</BaseProductionTimeInSeconds>
+    </Blueprint>
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>CoffeeFood</SubtypeId>
+      </Id>
+      <DisplayName>Make Coffee</DisplayName>
+      <Icon>Textures\not\GUI\Food\LiquidCoffee.dds</Icon>
+
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ingot" SubtypeId="SubFresh" />
+        <Item Amount="1" TypeId="Ingot" SubtypeId="WaterFood" />
+      </Prerequisites>
+
+      <Result Amount="1" TypeId="Ingot" SubtypeId="CoffeeFood" />
+      <BaseProductionTimeInSeconds>10</BaseProductionTimeInSeconds>
+    </Blueprint>
+    
+    
+    <!-- allows oxygen generator to work with other water types -->
+    
+        <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>WaterToOxygen</SubtypeId>
+      </Id>
+      <DisplayName>DisplayName_Item_Oxygen</DisplayName>
+      <Icon>Textures\GUI\Icons\ingot\gravel_ingot.dds</Icon>
+      <Prerequisites>
+        <Item Amount="1" TypeId="Ingot" SubtypeId="WaterFood" />
+      </Prerequisites>
+      <Result Amount="1.25" TypeId="Ingot" SubtypeId="Stone" />
+      <BaseProductionTimeInSeconds>0.1</BaseProductionTimeInSeconds>
+    </Blueprint>
+
+  
+
+  </Blueprints>
+</Definitions>
